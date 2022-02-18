@@ -62,6 +62,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         http.authorizeRequests().antMatchers(HttpMethod.POST,"/login").permitAll();
 //        http.authorizeRequests().antMatchers(HttpMethod.GET,"/login").permitAll();
+         http.authorizeRequests()
+        .antMatchers("/h2-console/**").permitAll();
         http.authorizeRequests().antMatchers(HttpMethod.GET,"/**").permitAll();
         http.authorizeRequests().antMatchers(HttpMethod.GET,"/hmsapi/admin/**").hasAuthority(Role.ADMIN.name());
 
