@@ -9,17 +9,10 @@ import com.example.HMS.exception.DepartmentNotFoundException;
 @SpringBootTest
 class HmsApplicationTests {
 
-	@Autowired
-	private StaffServiceImpl staffservice;
 	
 	@Test
-	void contextLoads() throws DepartmentNotFoundException {
-		StaffMapper staffMapper=StaffMapper.builder()
-			.role(Role.ADMIN.name())
-			.password("Admin")
-			.name("Admin")
-			.build();
-		System.out.println(staffservice.saveStaff(staffMapper));
+	void contextLoads() {
+		
 	}
 
 }
